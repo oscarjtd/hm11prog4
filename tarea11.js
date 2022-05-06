@@ -78,7 +78,7 @@ function ej9()
 
 function ej10()
 {
-    var cantShows = parseInt(prompt("¿Cuantos shows viste el ultimo año?: "));
+    var showsVistos = parseInt(prompt("¿Cuantos shows viste el ultimo año?: "));
     var verdad = prompt("¿Es verdad? (si / no): ");
     if(verdad.toLowerCase() == "si" ? alert(true) : alert(false));
 }
@@ -97,20 +97,20 @@ function ej11()
 
 function ej12()
 {
-    var numero = parseInt(prompt("Ingresa un numero: "));
+    var numero = parseInt(prompt("Numero entero: "));
     return alert((numero%2 == 0) ? true : false);
 }
 
 function ej13()
 {
-    var edad = parseInt(prompt("Ingresa tu edad: "));
-    var cantArt = parseInt(prompt("Ingresa cant articulos comprados: "));
-    return alert((edad>18 && cantArt>1) ? true : false);
+    var edad = parseInt(prompt("Tu edad: "));
+    var articulos = parseInt(prompt("Articulos comprados: "));
+    return alert((edad>18 && articulos>1) ? true : false);
 }
 
 function ej14()
 {
-    var texto = prompt("Ingresa un texto: ");
+    var texto = prompt("Ingresa una frase: ");
     return alert(((texto.length+1)%2 != 0) ? true : false);
 }
 
@@ -123,8 +123,8 @@ function ej15()
 
 function ej16()
 {
-    var nombre1 = prompt("Ingresa un nombre: ");
-    var nombre2 = prompt("Ingresa otro nombre: ");
+    var nombre1 = prompt("Tu nombre : ");
+    var nombre2 = prompt("Otro nombre: ");
     return alert((nombre1.charAt(0)==nombre2.charAt(0) 
     || nombre1.charAt((nombre1.length)-1)==nombre2.charAt((nombre2.length)-1)) ? true : false);
 }
@@ -132,19 +132,25 @@ function ej16()
 function ej17()
 {
     var numero = parseInt(prompt("Ingresa un numero entero: "));
-    console.log("numero entero: "+numero);
     return alert((numero >= 0) ? "valor absoluto: "+numero : "valor absoluto: "+(numero*(-1)));
 }
 
 function ej18()
 {
-    var numero1 = parseInt(prompt("Ingresa un numero: "));
-    var numero2 = parseInt(prompt("Ingresa otro numero: "));
-    if(numero1 == numero2)
-    {
-        return alert("Los numeros son iguales");
+    var a = parseInt(prompt("Ingrese un numero: "));
+    var b = parseInt(prompt("Ingrese otro numero: "));
+    if( a > b){
+        return alert(a + " es mayor");
+    }else{
+        if( a < b){
+            return alert(b + " es mayor");
+        }
+        else{
+            return alert("Son iguales")
+        }
     }
-    return alert((numero1>numero2) ? numero1+" es mayor" : numero2+" es mayor");
+    
+
 }
 
 function ej19()
@@ -170,7 +176,6 @@ function ej20()
     numeros.push(tercerNumero);
 
     var numeroMenor = Math.min(...numeros);
-    //console.log(numeroMenor);
-    
+
     return alert("Menor: "+ numeroMenor);
 }
